@@ -1,7 +1,7 @@
 # SimpleStereoARKit
 Simple reference guide on using ARKit without ARScene and a simple convenience class for attaching stereoscopic camera nodes
 
-[![sample](http://i.imgur.com/hxo07oy.jpg)]
+![sample](http://i.imgur.com/3u2l43w.png)
 
 ## SLAMRunner.swift
 Bare simple object to run the underlying ARKit SLAM. This will provide updates to a delegate in the form of a `matrix_float4x4` which is a type alias for `simd_float4x4`.

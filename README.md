@@ -38,6 +38,8 @@ func pixelBufferToUIImage(_ buffer: CVPixelBuffer, options: [String: Any]? = nil
 This is meant for as a template for reference. It creates to SCNViews side-by-side. It attaches *a single scene* to each of those views.
 It then creates a node with a camera for each eye, and attaches that to a "head node". Each scene sets the *point of view* to the respective camera.
 
+![dualcameras](http://i.imgur.com/xcfC66E.png)
+
 ```
 enum StereoEye {
     case left, right

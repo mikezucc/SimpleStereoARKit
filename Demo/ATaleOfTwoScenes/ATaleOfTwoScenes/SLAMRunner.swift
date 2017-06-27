@@ -42,8 +42,10 @@ extension SLAMRunner: ARSessionDelegate {
     }
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        if case ARCamera.TrackingState.notAvailable = frame.camera.trackingState {
+        if case ARCamera.TrackingState.normal = frame.camera.trackingState {
+            CVPixelBufferLockBaseAddress(frame.capturedImage, CVPixelBufferLockFlags.readOnly)
             delegate?.updatedTransform(frame.camera.transform, imagePixelBuffer: frame.capturedImage)
+            CVPixelBufferUnlockBaseAddress(frame.capturedImage, CVPixelBufferLockFlags.readOnly)
         } else {
             delegate?.trackingBadState(.notSLAM, trackingState: frame.camera.trackingState, error: nil)
         }
